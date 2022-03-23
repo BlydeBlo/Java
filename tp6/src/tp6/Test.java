@@ -16,9 +16,9 @@ public class Test {
 		Point1D p10 = new Point1D(5);
 		Point1D p11 = new Point1D(5);
 		
-		Point2D p20 = new Point2D(5, 5);
+		//Point2D p20 = new Point2D(5, 5);
 		
-		Point3D p30 = new Point3D(10, 5 , 10);
+		//Point3D p30 = new Point3D(10, 5 , 10);
 		
 		Point1D[] tab10 = {p10, p11};
 		
