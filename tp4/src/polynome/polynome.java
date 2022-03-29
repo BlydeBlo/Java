@@ -1,17 +1,17 @@
 package polynome;
 
 public class polynome {
-	
-	private int[] coeffs;
+	/*
+	private double[] coeffs;
 
-	public Polynome(int nbCoeffs) {
-		if (nbCoeffs > 0) {
-			this.coeffs = new int[nbCoeffs];
-			for (int i = 0; i < this.coeffs.lenght; i++) {
-				this.coeffs[i] = 0;
+	public Polynome(double[] coeffs) {
+		for (int i = 0; i < coeffs.length; i++) {
+			if (coeffs[i] != 0.0) {
+				
 			}
 		}
 	}
-
-	
+*/
+	/*voir correction*/
+		
 }

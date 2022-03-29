@@ -1,23 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
+<project name="TP3" default="compile" basedir=".">
+	<!-- Defining project properties -->
+	<property name="SRC" value="src"/>
+	<property name="BIN" value="bin"/>
+	<property name="PROG" value="HelloWorld"/>
 
-<!-- ====================================================================== -->
-<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
-<!-- ====================================================================== -->
+	<!-- Defining project classpath -->
+	<path id="project.classpath">
+		<pathelement location="${BIN}"/>
+	</path>
 
-<project name="tp1" default="package" basedir=".">
+	<target name="clean" description="Deleting bin directory">
+		<delete includeEmptyDirs="true">
+			<fileset dir="${BIN}"/>
+		</delete>
+	</target>
 
-  <!-- ====================================================================== -->
-  <!-- Import maven-build.xml into the current project                        -->
-  <!-- ====================================================================== -->
+	<target name="bin" description="Making bin directory">
+		<mkdir dir="${BIN}"/>
+	</target>
+ 
+	<target name="compile" description="Compiling classes" depends="bin">
+		<echo message="Compiling..."/>
+		<javac srcdir="${SRC}" 
+				destdir="${BIN}" 
+				debug="on" 
+				optimize="on" 
+				deprecation="on">
+			<classpath refid="project.classpath"/>
+		</javac>
+		<echo message="Project compiled."/>
+	</target>
 
-  <import file="maven-build.xml"/>
-  
-  <!-- ====================================================================== -->
-  <!-- Help target                                                            -->
-  <!-- ====================================================================== -->
+	<target name="jar" description="Creating executable jar file" depends="compile">
+		<jar destfile="${PROG}.jar" basedir="${BIN}">
+			<manifest>
+				<attribute name="Main-Class" value="${PROG}"/>
+			</manifest>
+		</jar>
+	</target>
 
-  <target name="help">
-    <echo message="Please run: $ant -projecthelp"/>
-  </target>
+	<target name="run" description="Running the program" depends="compile">
+		<java classname="${PROG}" classpath="${BIN}" fork="true"/>
+	</target>
+
+	<target name="doc" description="Making documentation">
+		<mkdir dir="doc"/>
+		<javadoc sourcepath="${SRC}" destpath="doc">
+			<fileset dir="${SRC}" defaultexcludes="yes">
+				<include name="*.java"/>
+			</fileset>
+		</javadoc>
+	</target>
 
 </project>

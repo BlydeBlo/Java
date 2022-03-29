@@ -5,12 +5,18 @@ public class suite {
         if (n==0){
                 return 100;
         }
-        if (n==1){
+        if (n == 1){
                 return 1;
         }
 
-        if (n%2==0){    /*N paire*/ 
-                return recursivite(n-1)/recursivite(n-2) - recursivite(n-2)/recursivite(n-1);
+        if (n % 2 == 0){    /*N paire*/
+                try{
+                    return recursivite(n-1)/recursivite(n-2) - recursivite(n-2)/recursivite(n-1);
+                }
+                catch(ArithmeticException e){
+                    
+                }
+                
         } else {        /*N impaire*/
                 return recursivite(n-2)/recursivite(n-1) - recursivite(n-1)/recursivite(n-2);
         }

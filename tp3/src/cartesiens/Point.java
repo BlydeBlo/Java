@@ -1,4 +1,4 @@
-package src;
+package cartesiens;
 
 public class Point {
     private float abs;
@@ -20,12 +20,16 @@ public class Point {
     /**
      * @return abscisse
      */
-    public float getAbs(){return abs;}
+    public float getAbs(){
+        return abs;
+    }
 
     /**
      * @return ordonnée
      */
-    public float getOrd(){return ord;}
+    public float getOrd(){
+        return ord;
+    }
     
     /**
      * @param : set abscisse
@@ -64,7 +68,7 @@ public class Point {
     /**
      * @param : la translation
      */
-    public void translater (Point vecteur) {
+    public void translater(Point vecteur) {
         this.setAbs(this.getAbs()-vecteur.getAbs());
         this.setOrd(this.getOrd()-vecteur.getOrd());
     }

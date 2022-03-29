@@ -3,7 +3,7 @@
 	<!-- Defining project properties -->
 	<property name="SRC" value="src"/>
 	<property name="BIN" value="bin"/>
-	<property name="PROG" value="TestPoint"/>
+	<property name="PROG" value="maths.Matrix"/>
 
 	<!-- Defining project classpath -->
 	<path id="project.classpath">
