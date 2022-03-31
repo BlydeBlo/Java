@@ -18,7 +18,7 @@ public class Point1D {
 
 	@Override
 	public String toString() {
-		return "Point1D [x=" + x + "]";
+		return "Point1D [x=" + this.x + "]";
 	}
 	
 	@Override
