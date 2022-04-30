@@ -9,10 +9,11 @@ public class TestPileFormes{
         System.out.println(p.vide());
         p.empiler(new Carre(5));
         p.empiler(new Cercle(5));
-        p.sommet();
+        System.out.println(p.vide());
+        /*p.sommet();
         p.depiler();
         System.out.println(p.vide());
         p.depiler();
-        System.out.println(p.vide());
+        System.out.println(p.vide());*/
     }
 }

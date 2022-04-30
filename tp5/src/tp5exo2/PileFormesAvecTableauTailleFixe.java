@@ -19,26 +19,33 @@ public class PileFormesAvecTableauTailleFixe implements PileFormes{
 	}
 	
 	@Override
+	/*boucle infini*/
 	public void empiler(Forme element) {
-		for (int i = 0; tab[i] != null && i<tab.length; i++) {
-			tab[i] = element;
+		int i = 0;
+		int fin = 0;
+		while (i < this.tab.length-1 || fin != 1) {
+			if (this.tab[i] == null) {
+				this.tab[i] = element;
+				fin = 1;
+				i += 1;
+			}
 		}
 	}
 
 	@Override
 	public void depiler(){
-		tab[tab.length-1] = null;
+		this.tab[this.tab.length-1] = null;
 	}
 
 	@Override
 	public Forme sommet(){
-		return tab[tab.length-1];
+		return this.tab[this.tab.length-1];
 	}
 
 	@Override
 	public boolean vide(){
-		for (int i = 0; i < tab.length; i++) {
-			System.out.println(tab[i]);
+		for (int i = 0; i < this.tab.length; i++) {
+			System.out.print(tab[i]);
 			if (tab[i] != null) {
 				return false;
 			}
@@ -49,7 +56,7 @@ public class PileFormesAvecTableauTailleFixe implements PileFormes{
 	@Override
 	public String toString(){
 		String res = "";
-		for (int i = 0; i < tab.length; i++) {
+		for (int i = 0; i < this.tab.length; i++) {
 			res += "tab[" + i + "] = " + tab[i];
 		}		
 		return res;

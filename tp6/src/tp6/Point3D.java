@@ -18,7 +18,7 @@ public class Point3D extends Point2D{
 	
 	@Override
 	public String toString() {
-		return "Point3D [y=" + z + "]";
+		return "Point3D [z=" + z + "]";
 	}
 	
 	@Override
