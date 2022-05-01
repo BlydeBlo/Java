@@ -97,7 +97,7 @@ Tableaux :
         int[] numsCopy = (int[]) nums.clone(); -> dupliquer 
 
 Types énumérés :
-    > Classe séparé avec chaque constance = une instance
+    > Classe séparé avec chaque constante = une instance
         public enum Fuel{
             GASOLINE, DIESEL, LPG; //constantes en majuscules
         }
