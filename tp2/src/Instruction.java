@@ -22,7 +22,4 @@ public class Instruction {
             System.out.println(semaine(i));
         }
     }
-
-    
-
 }
