@@ -144,7 +144,7 @@ public class Matrix {
 		boolean positive = m2.allPositive();
 		System.out.println(positive);
 		Matrix m3 = m2.somme(m1);
-		System.out.println(m3);		
+		System.out.println(m3);
 		System.out.println(m1.product(m2));		
 	}
 }
