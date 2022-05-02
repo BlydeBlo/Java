@@ -97,7 +97,7 @@ Tableaux :
         int[] numsCopy = (int[]) nums.clone(); -> dupliquer 
 
 Types énumérés :
-    > Classe séparé avec chaque constante = une instance
+    > Classe séparé avec une constante = une instance
         public enum Fuel{
             GASOLINE, DIESEL, LPG; //constantes en majuscules
         }
@@ -108,3 +108,37 @@ Types énumérés :
         (classe) static Fuel valueOf(String s){...} : ret instance référence 
         (classe) static Fuel[] values(){return Fuel.GASOLINE, Fuel.DIESEL, ...} : ret tableau des valeurs type énumération 
 
+Interfaces
+    > Déclare uniquement comportements sans définir (pas implémentation méthode, pas variable instance)
+        public interface Reparable {
+                void repair();
+                ...
+            }
+    > Classe implémente interface qui définit un comportement (implémentation multiple)
+        public class Car implements Reparable {
+            ...
+            @Override
+            public void repair(){
+                ...
+            }
+        }
+    
+Transtypage (Cast)
+    > Référence un seul type, objet plusieurs (polymorphes)
+    > Upcast : changer vers une classe moins spécifique (facile)
+    > Downcast : changer vers une classe plus spécifique (dur)
+
+Héritage
+    > Classe fille hérite de la classe mère (méthodes et attributs) (unique)
+    > Défaut classes héritent Object (toString(),equals(Object),...)
+    > Pour chaque couche de classe enfant il faut la construire car les constructeurs ne sont pas hérités (utilisation de super())
+    public class Kart extends Car {}
+
+Classe abstraite
+    > Déclare comportement mais définit partiellement
+    > Peut comporter méthodes/attributs non abstraits
+    > Permet de factoriser du code
+        public abstract class MotorVehicle{
+            public abstract void turn(...)
+        }
+    > Interdire l'héritage avec final
