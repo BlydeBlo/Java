@@ -145,4 +145,110 @@ Classe abstraite
             public abstract void turn(...)
         }
 
+Exception 
+    > Anticiper code susceptible produire erreur
+    > Sépare traitement normal et cas exceptionnel
+
+    public class name extends Exception {
+        public name (String msg){
+            super(msg);
+        }
+    }
+
+    > Lever exception : 
+
+    if (condition) {
+        throw new nomException ("message");
+    }
+
+    > Capturer exception :
     
+        try{                                          //Code susceptible lever exception
+            //methode pour lever exception
+            Sys.out.println("ok");
+        } catch (nomExeception e) {                    //traitement cas particulier
+            ...(traitement)
+            throw e; //relance l'exception
+            sys.err.println("fail" + e.getMessage());
+        } finally {                                    //Optionel et exec ts cas
+            sys.out.println("fin");
+        }
+
+    > Exception est remplie avec trace d'appels pile exécution (stack trace)
+    > Exception vérifiée :
+        Exception vérifiée directement dans méthode dans laquelle elle est levée
+
+            public void start() throws nameException {...}
+
+    > Exception non-vérifiée :
+        Exception levées implicitement par machine virtuelle
+    > Méthode clone :
+        Classe doit implémenter interface Cloneable
+
+            public class name implements Cloneable {
+                public Object clone() throws CloneNotSupportedException {
+                    Object name = (Object) super.clone();
+                    
+
+
+                    return clone;
+                }
+            }
+        Copie superficielle : copie référence
+        Copie profonde : copie attribut par attribut
+
+Collections
+    > Interfaces de collection fournit package java.util
+    > List (liste) Queue (file) Stack (pile) Set (ensemble sans doublons) Map (clé valeur)
+    > Opérations générales :
+        add(Object o)
+        remove (Object o)
+        clear()
+        contains(Object o) : boolean
+        size()
+        isEmpty()
+        iterator()
+    > Implémentations de List 
+        LinkedList (liste chaînée)
+        ArrayList : Stock les éléments dans un tableau
+        Méthode liste :
+            add(int index, Object o)
+            get(int index)
+            remove(int index)
+            indexOf(Object o)
+    > Implémentations de Set
+        HashSet : éléments regroupé paires clé-valeur avec code de hachage
+        TreeSet : éléments conservés dans un ordre trié
+    > Implémentations de Map : Similaire au Set
+        HashMap : clés hachées
+        TreeMap : clés triées
+        Méthodes :
+            get(Object key)
+            put(Object key)
+            remove(Object key)
+            containsKey(Object key)
+            containsValue(Object value)
+            values() : retourne collection valeurs
+            keySet() : retourne set Clé
+            entrySet() : retourne Set de paires clé-valeur
+    > Type génériques : classes/interfaces peut prendre d'autres types en paramètres
+        LinkedList<Car> cars = new LinkedList<Car>();
+    > Iterator : interface simple
+        hasNext() : boolean
+        next()
+        remove()
+    > ListIterator étend Iterator
+
+Types génériques
+    > Définit des interfaces ou es classes paramétrées par un ou plusieurs type de données
+    > Utilisation :
+        List<Car> cars = new ArrayList<Car>();
+    > Méthodes génériques: 
+
+        public <E> void foo(List <E> I){
+            Iterator<E> it = I.iterator();
+            ...
+        }
+
++Regarder vidéo sur Collection et types génériques
+        
