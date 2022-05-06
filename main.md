@@ -133,12 +133,16 @@ Héritage
     > Défaut classes héritent Object (toString(),equals(Object),...)
     > Pour chaque couche de classe enfant il faut la construire car les constructeurs ne sont pas hérités (utilisation de super())
     public class Kart extends Car {}
+    > Interdire l'héritage avec final
 
 Classe abstraite
+    > Ne peut pas être instancié
     > Déclare comportement mais définit partiellement
     > Peut comporter méthodes/attributs non abstraits
+    > Méthodes abstraites sans code ds corps
     > Permet de factoriser du code
         public abstract class MotorVehicle{
             public abstract void turn(...)
         }
-    > Interdire l'héritage avec final
+
+    
