@@ -21,20 +21,22 @@ public class Point {
      * @return abscisse
      */
     public float getAbs(){
-        return abs;
+        return this.abs;
     }
 
     /**
      * @return ordonnée
      */
     public float getOrd(){
-        return ord;
+        return this.ord;
     }
     
     /**
      * @param : set abscisse
      */
-    public void setAbs(float abs){this.abs = abs;}
+    public void setAbs(float abs){
+        this.abs = abs;
+    }
 
     /**
      * @param : set ordonnée
@@ -43,7 +45,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "(" + this.getAbs() + "," + this.getOrd() + ")";
+        return "Point : (" + this.getAbs() + "," + this.getOrd() + ")";
     }
 
     @Override

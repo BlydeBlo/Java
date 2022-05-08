@@ -20,11 +20,11 @@ Modificateur d'accès :
 Variable/Méthode d'instance :
     public class Car{
         private int nbMiles;
-        public void start(){};
+        public void start(){...};
     }
 
 Constructeur :
-    Pas de type de retour, même nom, (argument(s))
+    Pas de type de retour, même nom classe, (argument(s))
     public Car(){
         nbMiles = 0;
     }
@@ -39,7 +39,7 @@ Utiliser objet :
     Créer : 
         Car c0 = new Car(12);
     Appel méthodes :
-        c0.start();
+        c0.setAbs();
     c0 est ici la référence à l'objet
 
 Constructeurs par recopie :
@@ -84,9 +84,9 @@ Tableaux :
     > Déclaration & Initialisation
         String[] names; (null)
         String[] names = {"Paul", "Pierre"};
-    > Tableaux de tableaux (Déclaration & Initalisation)
-        int[][] matrix;
-        matrix = new int[20];
+    > Tableaux de tableaux (Déclaration & Initalisation) c'est de la merde
+        int[][] matrix; //déclaraiton
+        matrix = new int[20]; //init
         for (int i = 0; i < matrix.length; i++){
             matrix[i] = new int[50];
         }
@@ -198,7 +198,7 @@ Exception
         Copie profonde : copie attribut par attribut
 
 Collections
-    > Interfaces de collection fournit package java.util
+    > Interfaces de collection fournit package java.utils
     > List (liste) Queue (file) Stack (pile) Set (ensemble sans doublons) Map (clé valeur)
     > Opérations générales :
         add(Object o)
