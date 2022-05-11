@@ -240,7 +240,7 @@ Collections
     > ListIterator étend Iterator
 
 Types génériques
-    > Définit des interfaces ou es classes paramétrées par un ou plusieurs type de données
+    > Définit des interfaces ou des classes paramétrées par un ou plusieurs type de données
     > Utilisation :
         List<Car> cars = new ArrayList<Car>();
     > Méthodes génériques: 
